@@ -27,7 +27,46 @@ func main() {
 		dari data/nilai disebut konsep type inference.
 	*/
 	var firstName1 string = "Himawan" // Manifest typing
-	lastName1 := "Az~"                // Type inference
+	lastName1 := "Az~"                // Type inference,
+	// hanya bisa dilakukan didalam blok fungsi, misalnya main()
 
 	fmt.Printf("Halo %s %s!\n", firstName1, lastName1)
+
+	// Deklarasi multi variabel
+	var first, second, third string
+	first, second, third = "satu", "dua", "tiga"
+
+	// Contoh lain multi variabel
+	var four, fifth, sixth string = "empat", "lima", "enam"
+
+	// Multi variabel lebih ringkas
+	seventh, eight, ninth := "tujuh", "delapan", "sembilan"
+
+	// Teknik type inference untuk multi variabel beda tipe data
+	one, isFriday, twoPointTwo, say := 1, true, 2.2, "Hello"
+
+	fmt.Println(first, second, third)
+	fmt.Println(four, fifth, sixth)
+	fmt.Println(seventh, eight, ninth)
+	fmt.Println(one, isFriday, twoPointTwo, say)
+
+	/*
+		Semua variabel yang dideklarasikan harus digunakan.
+		Jika tidak, maka akan terjadi error saat di run.
+		Solusi dari hal tersebut adalah dengan variabel underscore _
+		Variabel underscore adalah reserved variable yang bisa digunakan
+		untuk menampung nilai yang tidak dipakai. Bisa juga dikatakan sebagai
+		keranjang sampah.
+	*/
+	// Contoh penggunaan reserved variable
+	_ = "belajar Golang"
+	_ = "Bismillah Golang"
+	name, _ := "John", "Doe"
+
+	println(name)
+
+	// Deklarasi variabel menggunakan keyword new
+	name1 := new(string)
+	fmt.Println(name1)  //tipe pointer string, hanya akan muncul alamat memori (hexadecimal)
+	fmt.Println(*name1) //untuk menampilkan nilai asli dengan asterisk sebagai dereference
 }
